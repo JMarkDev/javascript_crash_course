@@ -1,0 +1,10 @@
+* {
+    transition: ease .3s all;
+}
+.dark-theme {
+    background-color: black;
+}
+
+.dark-theme * {
+    color: #333;
+}
