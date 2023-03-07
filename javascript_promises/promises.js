@@ -9,7 +9,6 @@ document.querySelector('.status').style.color = 'orange'
 
 const emailRef = document.querySelector('.email');
 const statusRef = document.querySelector('.status');
-const videoRef = document.querySelector('.video')
 
 //  1. Then
 fetch("https://jsonplaceholder.typicode.com/users/1")
@@ -35,15 +34,15 @@ main()
 
 
 // NEW PROMISE
-
+/*
 function getSubscriptionStatus() {
     return new Promise((resolve, reject) => {
-        resolve("FREE")
+        resolve("VIP")
     })
 }
-
+*/
 //  1. Method 1 using -> Then
-getSubscriptionStatus().then(response => console.log(response))
+// getSubscriptionStatus().then(response => console.log(response))
 
 //  2. Method 2 using -> Async/Await use this instead
 async function promiseFunc() {
@@ -64,6 +63,14 @@ promiseFunc()
     4.  console.log the result of getVideo(status) in main() 
 */
 
+const videoRef = document.querySelector('.video')
+
+function getSubscriptionStatus() {
+    return new Promise((resolve, reject) => {
+        resolve("VIP")
+    })
+}
+
 function getVideo(subscriptionStatus) {
     return new Promise ((resolve, reject) => {
         if(subscriptionStatus === "VIP") {
@@ -72,9 +79,9 @@ function getVideo(subscriptionStatus) {
         else if(subscriptionStatus === "FREE") {
             resolve("show trailer")
         }
-        else(
+        else{
             reject("no video")
-        )
+        }
     })
 }
 
@@ -82,9 +89,7 @@ async function main() {
     const status = await getSubscriptionStatus()
     statusRef.innerHTML = status;
     try{
-        console.log(getVideo(status))
         const result = await getVideo(status)
-        console.log(result)
         videoRef.innerHTML = result;
     }
     catch (e){
