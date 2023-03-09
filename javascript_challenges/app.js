@@ -9,6 +9,18 @@
     Return the Sum of Two Numbers
     Create a function that takes two arguments as functions and return their sum.
 */
+
+/*
+    String to array
+    'abc'.split(')
+    ->  ['a', 'b', 'c']
+
+    'abc'.split('').reverse()
+    ->  ['c', 'b', 'a']
+
+    'abc'.split('').reverse().join('')
+    ->  'cba'
+*/
 const addRef = document.querySelector('.addition');
 
 function addition(num1, num2) {
@@ -171,3 +183,136 @@ function isLoggedAndSubscribed(logged_in, subscribed) {
 }
 
 console.log(isLoggedAndSubscribed("LOGGED_IN", "SUBSCRIBED"));
+
+/*
+    Falsy of Truthy
+    Given two values, return the first one if it is falsy, otherwise return second one.
+    */
+
+function falsyOrTruthy(elem1, elem2) {
+/*
+    if (!elem1) {
+        return elem1;
+    }
+    else{
+        return elem2;
+    }
+*/
+    return !elem1 ? elem1 : elem2
+}
+
+console.log(falsyOrTruthy(1, 5));
+
+//  Return the length of any given array 
+
+function arrlength(arr) {
+    return arr.length
+}
+
+console.log(arrlength([1,2,3,4,5,6,7,10]))
+
+
+//  RETURN LAST ELEMENT OF ARRAY
+
+function lastElem(arr) {
+    return arr[arr.length - 1]
+}
+
+console.log(lastElem([7,18, 9, 10]))
+
+//  Find the sum of an array
+// Given an array, return the sum every element
+
+
+function arrSum(arr) {
+    let sum = 0;
+    for(let i = 0; i < 3; i++){
+        //  This is how you loop through every element in an array
+        sum = sum + arr[i]
+    }
+    return sum;
+}
+
+console.log(arrSum([2,2,2]));
+
+
+/*
+    Add up the numbers from a single number
+    Given a number, add up all the numbers from one to the number that is given.
+    e.g An input of 4 will give you 1 + 2 + 3+ 4, which equals 10
+*/
+
+function progressiveSum(num) {
+    let sum = 0;
+    for(let i = 1; i <= num; i++) {
+        sum = sum + i
+    }
+    return sum
+}
+
+console.log(progressiveSum(3))
+
+
+//Given a number in seconds, return this number in mm:ss format
+// Math.floor -> round down the number remove the decimal
+function calcTime(seconds) {
+    let timerMinutes = Math.floor(seconds / 60)
+    let timerSeconds = seconds % 60
+
+    if (timerMinutes.toString().length === 1) {
+        timerMinutes = '0' + timerMinutes;
+    }
+
+    return timerMinutes + ':' + timerSeconds;
+}
+
+console.log(calcTime(70))
+
+//  Given an array of numbers, return the largest number of that array
+
+function getMax(arr) {
+    let max = arr[0]
+    for(let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+        // max = Math.max(arr[1])
+    }
+    return max;
+}
+
+console.log(getMax([10, 12, -20]));
+
+// Reverse a string
+
+function reverseString(str) {
+    let reversedStr = '';
+    for(let i = 0; i < str.length; i++) {
+        console.log(str[i])
+        reversedStr = str[i] + reversedStr
+    }   
+    //  Reverse string
+    //  return str.split('').reverse().join('');
+    //  Without for loop
+    return reversedStr;
+}
+
+console.log(reverseString('abc'));
+
+//  Given an array of elements, return the same length array filled with 0's
+/* 
+    Solution 1: For loop
+    Solution 2: Array 'fill'
+    Solution 3: Array 'map'
+*/
+function convertToZeros(arr) {
+    for(let i = 0; i < arr.length; ++i) {
+        console.log(arr[i])
+        arr[i] = 0
+    }
+    //without loop
+    // return new Array(arr.length).fill(0);
+    return arr;
+}
+
+console.log(convertToZeros([5, 100, 0]))
