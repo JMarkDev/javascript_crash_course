@@ -1,3 +1,4 @@
+//    !! -> use to convert array to boolean
 /*  ARROW FUNCTION
     = () => {
     }
@@ -316,3 +317,85 @@ function convertToZeros(arr) {
 }
 
 console.log(convertToZeros([5, 100, 0]))
+
+//  ARRAY.MAP
+// const arr = [];?
+
+function arrMap(arr) {
+    let arrmap = []
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]* 2)
+        arrmap.push(arr[i] * 2)
+    }
+    return arrmap;
+}
+
+console.log(arrMap([1, 2, 3]));
+
+//  .map() method
+//  -> convert element whatever you want
+console.log([1, 2, 3].map(elem => elem * 2));
+console.log([1, 2, 3].map(elem => elem = 'dog'));
+console.log([1, 2, 3].map(elem => elem = 'seroy cute'));
+
+//  Convert to 0 using arr.map
+
+function convertToZero(arr) {
+    return arr.map(elem => 0);
+    // return arr.map(elem => elem = 0)
+
+    /* 
+        return arr.map(elem => {
+         return 0
+        })
+    */
+}
+
+console.log(convertToZero([1, 2, 3, 4, 5]))
+
+/*
+    Filter out all the apples 
+    given an array of fruits, if it is an apple remove it from the array
+*/
+
+function removeApples(arr) {
+    /*
+        let noApples = []
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] !== 'Apple') {
+             noApples.push(arr[i])
+         }
+        }
+        return noApples;  
+    */
+     return arr.filter(elem => elem !== 'Apple')
+}
+
+console.log(removeApples(['Banana', 'Apple', 'Orange']));
+
+
+//  Filter out all the falsy value
+//  Given an array of values, filter out all the false values and only return the truthy values
+// Falsy and Truthy
+
+function filterOutFalsy(arr) {
+    let arrTruthy = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!!arr[i] === true) {
+            arrTruthy.push(arr[i])
+        }
+    }
+    return arrTruthy;
+    // return falsy.filter(elem => !!elem === true)
+}
+
+console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]));
+
+
+//Truthy to true, Falsy to false
+
+function convertToBoolean(arr) {
+   return arr.map(elem => !!elem)
+}
+
+console.log(convertToBoolean([500, 0, "David", "", []]))
