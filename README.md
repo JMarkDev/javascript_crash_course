@@ -25,4 +25,4 @@
 * sort()
 * Array.from()
 * Array.of()
-* math.floor()
+* Math.floor()
