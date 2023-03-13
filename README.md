@@ -7,5 +7,23 @@
 * Arrays
 * Objects
 * DOM
-
 * Promises
+
+* Truthy
+* Falsy
+
+// JavaScript Method
+* forEach()
+* includes()
+* filter()
+* map()
+* reduce()
+* push()
+* reverse()
+* some()
+* every()
+* sort()
+* Array.from()
+* Array.of()
+* Math.floor()
+* sort() or sort((a, b) => a -b );
