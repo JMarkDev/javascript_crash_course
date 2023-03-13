@@ -9,9 +9,10 @@
 * DOM
 * Promises
 
+* Truthy
+* Falsy
 
 // JavaScript Method
-
 * forEach()
 * includes()
 * filter()
