@@ -19,6 +19,7 @@
 * map()
 * reduce()
 * push()
+* math.floor()
 * reverse()
 * some()
 * every()
