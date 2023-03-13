@@ -26,3 +26,4 @@
 * Array.from()
 * Array.of()
 * Math.floor()
+* sort() or sort((a, b) => a -b );
