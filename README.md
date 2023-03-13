@@ -17,6 +17,8 @@
 * filter()
 * map()
 * reduce()
+* push()
+* reverse()
 * some()
 * every()
 * sort()
