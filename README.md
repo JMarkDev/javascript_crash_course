@@ -7,5 +7,18 @@
 * Arrays
 * Objects
 * DOM
-
 * Promises
+
+
+// JavaScript Method
+
+* forEach()
+* includes()
+* filter()
+* map()
+* reduce()
+* some()
+* every()
+* sort()
+* Array.from()
+* Array.of()
