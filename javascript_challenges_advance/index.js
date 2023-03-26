@@ -68,3 +68,75 @@ console.log(sortHighToLow([
     { id: 3, price: 60 },
     { id: 4, price: 10 }
 ]));
+
+//  PROMISES
+
+// ASYNC AND AWAIT
+
+
+async function fetchUser() {
+    const res = await fetch 
+    ('https://jsonplaceholder.typicode.com/posts');
+
+    const data = await res.json();
+    
+    console.log(data);
+}
+
+fetchUser();
+
+
+async function main() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
+     const data = await response.json();
+     const nameRef = document.querySelector('#user');
+     nameRef.innerHTML = data.name
+ 
+ }
+ 
+ main()
+
+
+//======================================
+async function postsByUser(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+    
+    const result = await promise.json();
+
+    const posts = result.filter(element => element.userId === userId);
+
+    console.log(posts);
+}
+
+postsByUser(4)
+
+//=======================================================================================
+async function incompleteTodos(completed) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+    const todos = await promise.json();
+    
+    const incomplete = todos.filter(element => element.completed === false);
+
+    console.log(incomplete);
+}
+
+incompleteTodos();
+
+
+//  First six incomplete task
+// using .slice(0, 6)
+
+async function firstSixIncomplete(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+    const todos = await promise.json();
+    
+    const incompleteTodos = todos.filter(elem => !elem.completed).slice(0, 6);
+/*
+    The expression !elem.completed inside the arrow function checks if the completed property of the current elem is false.
+*/
+    console.log(incompleteTodos);
+}
+
+firstSixIncomplete(6);
